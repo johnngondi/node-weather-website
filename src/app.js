@@ -70,9 +70,9 @@ app.get('/weather', (req, res) => {
                     error
                 });
             }
-            const {summary, temperature, precipProbability} = forecastData;
+            const {summary, temperature, precipProbability, temperatureLow, temperatureHigh} = forecastData;
             res.send({
-                forecast: summary + ' It is currently ' + temperature + ' degrees out. There is a ' + precipProbability + '% chance of rain',
+                forecast: summary + ' It is currently ' + temperature + ' degrees out. There is a ' + precipProbability + '% chance of rain. Lowest Temperature for the day was: ' + temperatureLow + ', the highest was: ' + temperatureHigh,
                 location: 'Forecast data for ' + location
             });
             
